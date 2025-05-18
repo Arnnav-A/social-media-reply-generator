@@ -38,8 +38,17 @@ See sample usage in [request.py](request.py)
  - Diversity: Multiple replies are generated using different temperature settings to ensure variety and naturalness.
 
 ## Architecture Decisions & Trade-offs
+
  - FastAPI: Chosen for its speed, async support, and ease of integration with Pydantic models.
  - LLM via Groq API: Offloads the complexity of language generation, but introduces dependency on an external service and potential latency.
  - MongoDB: Used for storing generated replies for analytics or future use. No complex relational data, so a document store is sufficient.
  - Stateless API: The backend is stateless except for reply storage, making it easy to scale horizontally.
  - Prompt-based Tone Detection: Relies on the LLM for tone detection, which is flexible but may be less consistent than a dedicated classifier.
+
+## Future Improvements
+
+ - Docker containerization
+ - Comrehensive testing
+ - Evaluating LLM performance (and Groq API reliance)
+ - More informative logging
+ - More informative API error messages
